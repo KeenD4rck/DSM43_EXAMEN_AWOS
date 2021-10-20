@@ -13,8 +13,16 @@ class Vehiculos extends Migration
      */
     public function up()
     {
-        //
-    }
+        Schema::create('Vehiculos', function (Blueprint $table) {
+            $table->id('NroMotor');
+            $table->string('Patente');
+            $table->string('Marca');
+            $table->string('Modelo');
+            $table->string('DocumentoDueño');
+            $table->rememberToken();
+            $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
@@ -23,6 +31,6 @@ class Vehiculos extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Vehiculos');
     }
 }

@@ -13,8 +13,16 @@ class Vendedores extends Migration
      */
     public function up()
     {
-        //
-    }
+        Schema::create('Vendedores', function (Blueprint $table) {
+            $table->id('NroSucursal');
+            $table->id('7221932389');
+            $table->string('Documento');
+            $table->string('Nombre');
+            $table->string('Domicilio');
+            $table->rememberToken();
+            $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
@@ -23,6 +31,6 @@ class Vendedores extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Vendedores');
     }
 }

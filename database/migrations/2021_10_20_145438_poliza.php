@@ -13,8 +13,17 @@ class Poliza extends Migration
      */
     public function up()
     {
-        //
-    }
+        Schema::create('Poliza', function (Blueprint $table) {
+            $table->id('NroPoliza');
+            $table->string('Patente');
+            $table->string('Vendedor');
+            $table->string('FechaInicio');
+            $table->string('Duracion');
+            $table->string('Tipo');
+            $table->rememberToken();
+            $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
@@ -23,6 +32,6 @@ class Poliza extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Poliza');
     }
 }

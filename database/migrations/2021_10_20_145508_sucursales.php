@@ -13,8 +13,15 @@ class Sucursales extends Migration
      */
     public function up()
     {
-        //
-    }
+        Schema::create('Sucursales', function (Blueprint $table) {
+            $table->id('Nro');
+            $table->id('7224932389');
+            $table->string('Nombre');
+            $table->string('Domicilio');
+            $table->rememberToken();
+            $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
@@ -23,6 +30,6 @@ class Sucursales extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Sucursales');
     }
 }

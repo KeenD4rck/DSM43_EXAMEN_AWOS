@@ -13,8 +13,15 @@ class Accidentes extends Migration
      */
     public function up()
     {
-        //
-    }
+        Schema::create('Accidentes', function (Blueprint $table) {
+            $table->string('Patente');
+            $table->string('Lugar');
+            $table->string('Fecha');
+            $table->string('Descripcion');
+            $table->rememberToken();
+            $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
@@ -23,6 +30,6 @@ class Accidentes extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Accidentes');
     }
 }
